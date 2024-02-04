@@ -12,8 +12,10 @@ public class DBCon {
         Connection connect = null;
 
         String prInsertSql = "INSERT INTO emp (emp_name, emp_position, emp_salary) VALUES (?,?,?)";
+        String sql = "SELECT * FROM employees";
 
         try {
+
             connect = DriverManager.getConnection(DB_URL,DB_USER,DB_PASSWORD);
             PreparedStatement pr = connect.prepareStatement(prInsertSql);
             pr.setInt(3,27000);
